@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GP-1</title>
+    <link rel="shortcut icon" href="./icon.jpeg" type="image/x-icon">
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        .icon {
+            justify-content:  center;
+            align-items: center;
+            display: flex
+        }
+
+        .iconImage {
+            width: 80px;
+            margin-top: 150px;
+        }
+
+        /* 
+        ===============================================
+        keyboard Numerical for Gpay
+        ===============================================
+        */
+        .keyboard {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            padding:0;
+        }
+
+        .keyboard .key {
+            --sizeH: 60px;
+            --sizeW: 120px;
+            width: var(--sizeW);
+            height: var(--sizeH);
+
+            /* padding: 2vw 8vw; */
+            margin: 0;
+            background-color: transparent;
+            border: none;
+            font-size: 2em;
+        }
+
+        .keyboard .keyF, .keyboard .keyD {
+            background-color: transparent;
+            border: none;
+            width: 120px;
+            height: 60px;
+            font-size: .95em;
+        }
+
+        .bottom {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            margin: 0%;
+            padding: 0;
+        }
+
+        .key.key-0 {
+            --sizeH: 60px;
+            --sizeW: 100px;
+        }
+
+        /* 
+        ===========================================================
+        dots for Gpay
+        ===========================================================
+        */
+
+        .dots {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 30px;
+            padding: 0;
+        }
+
+        .dots span {
+            --dot-size: 10px;
+            width: var(--dot-size);
+            height: var(--dot-size);
+            border: 1.2px solid #000;
+            border-radius: 50%;
+            background-color: transparent;
+            margin: 0 10px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="lock">
+        <div class="icon">
+            <img src="./icon.jpeg" alt="Google pay icon" class="iconImage">
+        </div>
+
+        <div class="bottom">
+            <div class="dots">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="keyboard">
+                <div class="row">
+                    <button class="key">1</button>
+                    <button class="key">2</button>
+                    <button class="key">3</button>
+                </div>
+                <div class="row">
+                    <button class="key">4</button>
+                    <button class="key">5</button>
+                    <button class="key">6</button>
+                </div>
+                <div class="row">
+                    <button class="key">7</button>
+                    <button class="key">8</button>
+                    <button class="key">9</button>
+                </div>
+                <div class="row">
+                    <button class="keyF">forgot password</button>
+                    <button class="key key-0">0</button>
+                    <button class="keyD">delete</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const keys = document.querySelectorAll('.key')
+        const keyF = document.querySelector('.keyF')
+        const keyD = document.querySelector('.keyD')
+        const dots = document.querySelectorAll('.dots span')
+        var dotC = 0
+ 
+        for(var i = 0 ; i<10; i++) {
+            keys[i].addEventListener('click', function(){
+                addDots()
+            })
+        }
+        
+        keyF.addEventListener('click', function(){
+            document.body.style.display='none'
+        })
+        
+        keyD.addEventListener('click', function(){
+            subDots()
+        })
+
+        function addDots (){
+            if(dotC>=0 & dotC<4) {
+                dots[dotC].style.backgroundColor = 'black'
+                dotC=dotC+1
+            }
+        }
+
+        function subDots (){
+            if(dotC>0 & dotC<5){
+                dotC=dotC-1
+                dots[dotC].style.backgroundColor = 'transparent'
+            }
+        }
+    </script>
+</body>
+</html>
