@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>enter google pin page</title>
+    <link rel="shortcut icon" href="./Google icon.png" type="image/x-icon">
+
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+        :root {
+            --dot-time-duration: 1s;
+            --def-animation-delay: 0.1s;
+            --sec-animation-delay: 0.2s;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        .center {
+            justify-content:  center;
+            align-items: center;
+            display: flex
+        }
+
+        .iconG {
+            width: 80px;
+            margin-top: 10px;
+        }
+
+        /* 
+        ===============================================
+        text top promote
+        ===============================================
+        */
+        .promoteText {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .promoteText .text-1 {
+            font-size: 2em;
+            margin-top: 10px;
+        }
+
+        .promoteText .email {
+            color: #555;
+            margin-top: 5px;
+            font-size: 1.2em;
+        }
+
+        /* 
+        ===============================================
+        keyboard Numerical for Gpay
+        ===============================================
+        */
+        .keyboard {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            padding:0;
+        }
+
+        .keyboard .key {
+            --sizeH: 60px;
+            --sizeW: 120px;
+            width: var(--sizeW);
+            height: var(--sizeH);
+
+            /* padding: 2vw 8vw; */
+            margin: 0;
+            background-color: transparent;
+            border: none;
+            font-size: 2em;
+        }
+
+        .keyboard .keyF, .keyboard .keyD {
+            background-color: transparent;
+            border: none;
+            width: 120px;
+            height: 60px;
+        }
+
+        .keyboard .keyD span{
+            font-size: 2.5em;
+        }
+
+        .bottom {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            margin: 0%;
+            padding: 0;
+        }
+
+        .key.key-0 {
+            --sizeH: 60px;
+            --sizeW: 100px;
+        }
+
+        /* 
+        ===========================================================
+        dots for Gpay
+        ===========================================================
+        */
+
+        .dots {
+            margin-top: 30px;
+            padding: 0;
+        }
+
+        .dots span {
+            --dot-size: 25px;
+            width: var(--dot-size);
+            height: var(--dot-size);
+            border: 1.2px solid #000;
+            border-radius: 50%;
+            background-color: transparent;
+            margin: 0 12px;
+        }
+
+        .dots.checking span:nth-child(1)  {
+            animation-name: checking_results_1;
+            animation-duration: var(--dot-time-duration);
+            animation-iteration-count: infinite;
+            transition: all 1s;
+            animation-delay: var(--def-animation-delay);
+        }
+
+        .dots.checking span:nth-child(2) {
+            animation-name: checking_results_1;
+            animation-duration: var(--dot-time-duration);
+            animation-iteration-count: infinite;
+            transition: all 1s;
+            animation-delay: calc(var(--def-animation-delay) + var(--sec-animation-delay) * 1);
+        }
+
+        .dots.checking span:nth-child(3) {
+            animation-name: checking_results_1;
+            animation-duration: var(--dot-time-duration);
+            animation-iteration-count: infinite;
+            transition: all 1s;
+            animation-delay: calc(var(--def-animation-delay) + var(--sec-animation-delay) * 2);
+        }
+
+        .dots.checking span:nth-child(4) {
+            animation-name: checking_results_1;
+            animation-duration: var(--dot-time-duration);
+            animation-iteration-count: infinite;
+            transition: all 1s;
+            animation-delay: calc(var(--def-animation-delay) + var(--sec-animation-delay) * 3);
+        }
+
+        @keyframes checking_results {
+            from {
+                background-color: transparent;
+            }
+            to {
+                background-color: #000;
+            }
+        }
+
+        @keyframes checking_results_1 {
+            from{
+                background-color: #000;
+            }
+            to {
+                background-color: transparent;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <div class="iconDiv center">
+            <img src="./Google icon.png" class="iconG" alt="Google">
+        </div>
+
+        <div class="promoteText center">
+            <span class="text-1">Enter Google PIN</span>
+            <span class="email"></span>
+        </div>
+
+        <div class="dots center">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <div class="keyboard bottom">
+            <div class="row">
+                <button class="key">1</button>
+                <button class="key">2</button>
+                <button class="key">3</button>
+            </div>
+            <div class="row">
+                <button class="key">4</button>
+                <button class="key">5</button>
+                <button class="key">6</button>
+            </div>
+            <div class="row">
+                <button class="key">7</button>
+                <button class="key">8</button>
+                <button class="key">9</button>
+            </div>
+            <div class="row">
+                <button class="keyF"></button>
+                <button class="key">0</button>
+                <button class="keyD">
+                    <span class="material-symbols-outlined">
+                        backspace
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const keys = document.querySelectorAll('.key')
+        const keyD = document.querySelector('.keyD')
+        const dots = document.querySelectorAll('.dots span')
+        const email = document.querySelector('.email')
+        var dotC = 0
+        let mail_ID = "ankitsaikia19@gmail.com"
+
+        for(var i=0;i<10;i++){
+            keys[i].addEventListener('click',function(){
+                addDots()
+                checkDots()
+            })
+        }
+
+        keyD.addEventListener('click',function(){
+            removeDots()
+        })
+
+        function addDots (){
+            if(dotC>=0 & dotC<4) {
+                dots[dotC].style.backgroundColor = 'black'
+                dotC=dotC+1
+            }
+        }
+
+        function removeDots (){
+            if(dotC>0 & dotC<5){
+                dotC=dotC-1
+                dots[dotC].style.backgroundColor = 'transparent'
+            }
+            checkDots()
+        }
+
+        function checkDots (){
+            if (dotC===4){
+                document.querySelector('.dots').classList.add('checking')
+            }
+            else{
+                document.querySelector('.dots').classList.remove('checking')
+            }
+        }
+
+        email.textContent = mail_ID
+    </script>
+</body>
+
+</html>
